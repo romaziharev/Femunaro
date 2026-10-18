@@ -1,0 +1,18 @@
+{
+  "bank_name": "Femonaro",
+  "version": "1.0",
+  "accounts": [
+    {
+      "id": "acc_001",
+      "owner": "User_One",
+      "balance": 1000,
+      "currency": "FEM"
+    },
+    {
+      "id": "acc_002",
+      "owner": "User_Two",
+      "balance": 500,
+      "currency": "FEM"
+    }
+  ]
+}
