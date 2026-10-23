@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Фемунаро — Страна идей</title>
+  <style>
+    :root {
+      --bg: #f5f6f7;        /* молочный фон */
+      --panel: #ffffff;     /* белый блок контента */
+      --text: #2d3436;      /* почти чёрный текст */
+      --accent: #6c5ce7;    /* спокойный фиолетовый для акцентов */
+      --border: #dfe6e9;    /* светло‑серая рамка */
+      --brown: #636e72;     /* приглушённый коричнево‑серый */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .site-wrapper {
+      width: 100%;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    p.subtitle {
+      margin: 0;
+      color: var(--brown);
+      font-size: 0.95rem;
+    }
+
+    /* Навигация */
+    .nav-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    button.nav-btn {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    button.nav-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    button.nav-btn.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* Панели страниц (имитация переходов) */
+    .page-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+      background: var(--panel);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .page-panel.active {
+      display: block;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .balance-box {
+      background: #f1f2f6;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .amount {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <h1>Фемунаро</h1>
+      <p class="subtitle">Страна идей и концепций</p>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+      <button class="nav-btn active" onclick="switchPage('history')">История</button>
+      <button class="nav-btn" onclick="switchPage('lang')">Язык Multes</button>
+      <button class="nav-btn" onclick="switchPage('economy')">Валюта SRF</button>
+    </div>
+
+    <!-- Страница: История -->
+    <div id="history" class="page-panel active">
+      <h2>История зарождения Фемунаро</h2>
+      <p>Фемунаро начиналась как концепция идеального города, где экономика, архитектура и технологии работают вместе. Первые планы появились как наброски на бумаге, затем — в виде схем и алгоритмов.</p>
+      <ul>
+        <li>Идея забора и парадного входа — защита и символ порядка.</li>
+        <li>Лесополоса — природный барьер и зона отдыха.</li>
+        <li>Квадратная планировка — удобство для транспорта и пешеходов.</li>
+        <li>Центральный парк — сердце города, место встреч и вдохновения.</li>
+      </ul>
+    </div>
+
+    <!-- Страница: Язык Multes -->
+    <div id="lang" class="page-panel">
+      <h2>Язык Multes</h2>
+      <p>Multes — условный язык Фемунаро. Он задуман как простой, но выразительный: короткие слова, понятная структура, минимум исключений.</p>
+      <ul>
+        <li><b>«Фему»</b> — основа, начало, центр.</li>
+        <li><b>«Наро»</b> — народ, сообщество, город.</li>
+        <li>Алфавит — пока в разработке, планируется использовать символы, близкие к международным стандартам, но с собственными смыслами.</li>
+        <li>Словарь будет пополняться: сначала — базовые понятия (дом, парк, забор, дорога), затем — более сложные термины.</li>
+      </ul>
+      <p>Кнопка «Словарь» пока ведёт к заготовке — позже туда можно добавить список слов.</p>
+    </div>
+
+    <!-- Страница: Экономика и валюта SRF -->
+    <div id="economy" class="page-panel">
+      <h2>Экономика Фемунаро: валюта SRF</h2>
+      <div class="balance-box">
+        <p>Текущий баланс</p>
+        <span class="amount" id="balance">1000 SRF</span>
+      </div>
+      <p>SRF — внутренняя валюта Фемунаро. Её ценность основана на труде и ресурсах страны: выращивании картошки, строительстве, поддержании порядка.</p>
+      <ul>
+        <li>+100 SRF — за собранный урожай картошки.</li>
+        <li>−50 SRF — на материалы для забора.</li>
+        <li>Курс может меняться в зависимости от сезона и спроса.</li>
+      </ul>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="nav-btn" style="flex:1; background:#dfe6e9;" onclick="addMoney()">+100 SRF (урожай)</button>
+        <button class="nav-btn" style="flex:1; background:#dfe6e9;" onclick="spendMoney()">−50 SRF (материалы)</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let balance = 1000;
+    const balanceEl = document.getElementById('balance');
+
+    function switchPage(pageId) {
+      // убираем active у всех панелей
+      document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+      // показываем нужную панель
+      document.getElementById(pageId).classList.add('active');
+
+      // подсвечиваем кнопку
+      const buttons = document.querySelectorAll('.nav-btn');
+      if (pageId === 'history') buttons[0].classList.add('active');
+      else if (pageId === 'lang') buttons[1].classList.add('active');
+      else if (pageId === 'economy') buttons[2].classList.add('active');
+    }
+
+    function addMoney() {
+      balance += 100;
+      balanceEl.textContent = balance + ' SRF';
+    }
+
+    function spendMoney() {
+      if (balance >= 50) {
+        balance -= 50;
+        balanceEl.textContent = balance + ' SRF';
+      } else {
+        alert('Недостаточно средств в валюте SRF');
+      }
+    }
+  </script>
+</body>
+</html>
