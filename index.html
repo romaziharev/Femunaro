@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Фемонаро — Эксперимент</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    button {
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    .btn-blue { background-color: #3498db; }
+    .btn-green { background-color: #2ecc71; }
+    .btn-orange { background-color: #e67e22; }
+    .btn-purple { background-color: #9b59b6; }
+
+    .section {
+      display: none; /* по умолчанию все блоки скрыты */
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .active {
+      display: block; /* активный блок показываем */
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #7f8c8d;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Фемонаро: эксперимент</h1>
+
+  <div class="buttons-grid">
+    <button class="btn-blue" onclick="showSection('plan')">План города</button>
+    <button class="btn-green" onclick="showSection('brain')">Симулятор мозга</button>
+    <button class="btn-orange" onclick="showSection('radar')">Радар и беспилотники</button>
+    <button class="btn-purple" onclick="showSection('app')">Приложение с двумя экранами</button>
+  </div>
+
+  <!-- Блок 1: План города -->
+  <div id="plan" class="section active">
+    <h2>План Фемонаро</h2>
+    <p>По периметру — забор с парадным входом (ворота и охрана). Впереди — лесополоса. Далее — квадрат с жилыми домами, сельским хозяйством и общественными зданиями. В центре — большой парк.</p>
+  </div>
+
+  <!-- Блок 2: Симулятор мозга -->
+  <div id="brain" class="section">
+    <h2>Симулятор мозга</h2>
+    <p>Нейроны без двоичного кодирования. Рычаги для голода, температуры, боли, перевозбуждения. На выходе — пять качественных состояний: плохо, нормально, хорошо, превосходно.</p>
+  </div>
+
+  <!-- Блок 3: Радар и беспилотники -->
+  <div id="radar" class="section">
+    <h2>Радар и беспилотники</h2>
+    <p>Идея: обнаруживать беспилотники радиоволнами — волны отражаются от объекта, и по отражению можно понять, что там что-то есть.</p>
+  </div>
+
+  <!-- Блок 4: Приложение с двумя экранами -->
+  <div id="app" class="section">
+    <h2>Приложение с двумя экранами</h2>
+    <p>Два поля ввода/вывода, два экрана. Передача данных, в том числе двоичным кодом. Возможность менять скорость передачи.</p>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Скрываем все секции
+      var sections = document.querySelectorAll('.section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+      }
+      // Показываем нужную
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+  <footer>Экспериментальный сайт проекта Фемонаро • Одна страница</footer>
+</body>
+</html>
